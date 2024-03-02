@@ -11,7 +11,7 @@ export async function POST(req) {
     const { username, password } = await req.json();
 
     const checkUser = await User.findOne({ username });
-
+    console.log(checkUser)
     if (!checkUser) {
       return NextResponse.json({
         success: false,
